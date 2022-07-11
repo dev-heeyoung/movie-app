@@ -1,27 +1,38 @@
 import PropTypes from "prop-types"
-import { Link } from "react-router-dom";
+import styles from "./MovieDetail.module.css";
 
-function MovieDetail({id, img, title, year, rating, runtime, description, genres}) {
+
+function MovieDetail({img, title, url, year, rating, runtime, description, genres}) {
     return (
-    <div key={id}>
-        <img src={img} alt={title} />
-        <h2><Link to={`movie/${id}`}>{title}</Link></h2>
-        <p>{year}</p>
-        <p>{rating}</p>
-        <p>{runtime}</p>
-        <p>{description}</p>
-        <ul>
+    <div className={styles.movie}>
+        <div>
+            <img src={img} alt={title} className={styles.movie__img}/>
+            <a href={url}>
+                <button>Download</button>
+            </a>
+        </div>
+        <div>
+            <h2 className={styles.movie__title}>{title}</h2>
+            <p className={styles.movie__year}>{year}</p>
+            <ul className={styles.movie__genres}>
             {genres.map((genre) => ( 
                 <li key={genre}>{genre}</li>
             ))}           
         </ul>
+            <p>★ {rating} / 10</p>
+            <p>Running Time: {runtime}</p>
+            <p>{description}</p>
+        </div>
+        
+        
+
     </div>
     )
 }
 
 MovieDetail.propTypes = {
-    id: PropTypes.number.isRequired,
     img: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
