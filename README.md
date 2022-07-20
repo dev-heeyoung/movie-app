@@ -2,9 +2,9 @@
 ![movieApp](https://user-images.githubusercontent.com/90359267/178572440-7c341b59-982c-44db-8dd0-17fe238484ce.gif)
 
 # Skills
--Languages: CSS
--Library: React
--Knowledge: State, Props, Class Components, Data Fetching, Routing
+- Languages: CSS
+- Library: React
+- Knowledge: State, Props, Class Components, Data Fetching, Routing
 
 # Description
--Description: This movie app shows movie information by fetching data.
+This movie app shows movie information by fetching data.
